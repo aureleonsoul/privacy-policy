@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — Flappy Miku</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --miku: #39C5BB;
+      --miku-dark: #2aa49b;
+      --miku-light: #e0faf8;
+      --bg: #f4fffe;
+      --text: #1a2e2d;
+      --subtext: #4a6665;
+      --card: #ffffff;
+      --border: #c8efec;
+      --accent: #fc8fd4;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Decorative background blobs */
+    body::before {
+      content: '';
+      position: fixed;
+      top: -120px;
+      right: -120px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(57,197,187,0.18) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      bottom: -100px;
+      left: -100px;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(252,143,212,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrapper {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 48px;
+      animation: fadeDown 0.6s ease both;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--miku);
+      color: white;
+      padding: 10px 22px 10px 14px;
+      border-radius: 999px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 20px rgba(57,197,187,0.35);
+    }
+
+    .logo svg {
+      width: 32px;
+      height: 32px;
+    }
+
+    .logo span {
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+    }
+
+    h1 {
+      font-family: 'Nunito', sans-serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: var(--subtext);
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .effective {
+      display: inline-block;
+      margin-top: 10px;
+      background: var(--miku-light);
+      color: var(--miku-dark);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 4px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 16px rgba(57,197,187,0.07);
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .card:nth-child(1) { animation-delay: 0.1s; }
+    .card:nth-child(2) { animation-delay: 0.15s; }
+    .card:nth-child(3) { animation-delay: 0.2s; }
+    .card:nth-child(4) { animation-delay: 0.25s; }
+    .card:nth-child(5) { animation-delay: 0.3s; }
+    .card:nth-child(6) { animation-delay: 0.35s; }
+    .card:nth-child(7) { animation-delay: 0.4s; }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: var(--miku-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    h2 {
+      font-family: 'Nunito', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+
+    p {
+      font-size: 0.95rem;
+      line-height: 1.75;
+      color: var(--subtext);
+      font-weight: 500;
+    }
+
+    p + p { margin-top: 12px; }
+
+    ul {
+      margin-top: 10px;
+      padding-left: 0;
+      list-style: none;
+    }
+
+    ul li {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--subtext);
+      font-weight: 500;
+      padding: 4px 0 4px 24px;
+      position: relative;
+    }
+
+    ul li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--miku);
+      font-size: 0.65rem;
+      top: 8px;
+    }
+
+    a {
+      color: var(--miku-dark);
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1.5px solid var(--border);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    a:hover {
+      color: var(--miku);
+      border-color: var(--miku);
+    }
+
+    .highlight-box {
+      background: var(--miku-light);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-top: 14px;
+    }
+
+    .highlight-box p {
+      color: var(--miku-dark);
+      font-size: 0.88rem;
+    }
+
+    .contact-card {
+      background: linear-gradient(135deg, var(--miku) 0%, #2bb8ae 100%);
+      border: none;
+      color: white;
+    }
+
+    .contact-card h2,
+    .contact-card p,
+    .contact-card a {
+      color: white;
+    }
+
+    .contact-card a {
+      border-bottom-color: rgba(255,255,255,0.4);
+    }
+
+    .contact-card a:hover {
+      border-bottom-color: white;
+    }
+
+    .contact-card .icon {
+      background: rgba(255,255,255,0.2);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: var(--subtext);
+      font-size: 0.82rem;
+      font-weight: 500;
+      opacity: 0.7;
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 500px) {
+      h1 { font-size: 1.7rem; }
+      .card { padding: 22px 18px; }
+      .wrapper { padding: 32px 16px 60px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <header>
+      <div class="logo">
+        <!-- Simple Miku-style SVG icon -->
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="16" cy="16" r="16" fill="white" fill-opacity="0.2"/>
+          <!-- Body -->
+          <ellipse cx="16" cy="21" rx="6" ry="5" fill="white" fill-opacity="0.9"/>
+          <!-- Head -->
+          <circle cx="16" cy="12" r="6" fill="white" fill-opacity="0.9"/>
+          <!-- Twin tails -->
+          <path d="M10 10 Q4 8 3 14" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <path d="M22 10 Q28 8 29 14" stroke="white" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+          <!-- Eyes -->
+          <circle cx="14" cy="12" r="1.2" fill="#39C5BB"/>
+          <circle cx="18" cy="12" r="1.2" fill="#39C5BB"/>
+        </svg>
+        <span>Flappy Miku</span>
+      </div>
+      <h1>Privacy Policy</h1>
+      <p class="subtitle">We keep it simple. Here's exactly what we do (and don't do) with your data.</p>
+      <span class="effective">Effective: January 1, 2025</span>
+    </header>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="icon">👋</div>
+        <h2>Overview</h2>
+      </div>
+      <p>Flappy Miku ("the app", "we", "us") is a free mobile game developed by Aurelon Soul. This Privacy Policy explains how we handle information when you use our app on Android devices.</p>
+      <p>We do not collect, store, or sell any personally identifiable information ourselves. However, the app does use third-party services that may collect data as described below.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="icon">📱</div>
+        <h2>Information Stored on Your Device</h2>
+      </div>
+      <p>The app stores the following data locally on your device only, using AsyncStorage. This data never leaves your device and is not accessible by us:</p>
+      <ul>
+        <li>Your best score</li>
+        <li>Which characters you have unlocked</li>
+        <li>Your currently selected character</li>
+        <li>Whether you have been shown the app rating prompt</li>
+      </ul>
+      <div class="highlight-box">
+        <p>This data is stored entirely on your device. Uninstalling the app will permanently delete it.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="icon">📢</div>
+        <h2>Advertising — Google AdMob</h2>
+      </div>
+      <p>Flappy Miku displays ads served by <strong>Google AdMob</strong>, a third-party advertising platform operated by Google LLC. AdMob may collect and use data to serve personalized or non-personalized ads, including:</p>
+      <ul>
+        <li>Device identifiers (Advertising ID)</li>
+        <li>IP address and approximate location</li>
+        <li>App usage and interaction data</li>
+        <li>Device information (model, OS version)</li>
+      </ul>
+      <p style="margin-top: 14px;">This data is collected and processed by Google under their own privacy policy. We do not have direct access to this data.</p>
+      <ul style="margin-top: 10px;">
+        <li><a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a></li>
+        <li><a href="https://support.google.com/admob/answer/6128543" target="_blank">How Google uses data from apps that use AdMob</a></li>
+        <li><a href="https://adssettings.google.com" target="_blank">Opt out of personalized ads</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="icon">🎯</div>
+        <h2>Ad Formats Used</h2>
+      </div>
+      <p>The app uses the following AdMob ad formats:</p>
+      <ul>
+        <li><strong>Banner ads</strong> — displayed at the bottom of the screen during gameplay and menus</li>
+        <li><strong>Interstitial ads</strong> — full-screen ads shown occasionally between game sessions</li>
+        <li><strong>Rewarded ads</strong> — optional ads you can choose to watch in exchange for a one-time in-game revival</li>
+      </ul>
+      <div class="highlight-box">
+        <p>Rewarded ads are always optional and player-initiated. You will never be forced to watch a rewarded ad.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="icon">🧒</div>
+        <h2>Children's Privacy</h2>
+      </div>
+      <p>Flappy Miku is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child under 13 has provided personal data through this app, please contact us and we will take steps to remove that information.</p>
+      <p>AdMob ads shown in this app are not configured for child-directed treatment. If you are a parent or guardian with concerns, please review Google's family policies.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="icon">🔄</div>
+        <h2>Changes to This Policy</h2>
+      </div>
+      <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated effective date. We encourage you to review this page periodically. Continued use of the app after changes are posted constitutes your acceptance of the updated policy.</p>
+    </div>
+
+    <div class="card contact-card">
+      <div class="card-header">
+        <div class="icon">✉️</div>
+        <h2>Contact Us</h2>
+      </div>
+      <p>If you have any questions or concerns about this Privacy Policy or the app's data practices, please reach out:</p>
+      <p style="margin-top: 12px;"><strong>Developer:</strong> Aurelon Soul<br/>
+      <strong>Email:</strong> <a href="mailto:your@email.com">your@email.com</a></p>
+    </div>
+
+    <footer>
+      © 2025 Aurelon Soul · Flappy Miku · All rights reserved
+    </footer>
+
+  </div>
+</body>
+</html>
